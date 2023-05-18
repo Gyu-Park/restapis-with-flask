@@ -19,7 +19,7 @@ def create_store():
 
 
 @app.get("/store/<string:name>")
-def get_items(name):
+def get_store(name):
     for store in stores:
         if store["name"] == name:
             return store
