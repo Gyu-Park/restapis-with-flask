@@ -13,7 +13,7 @@ def get_stores():
 @app.post("/store")
 def create_store():
     store_data = request.get_json()
-    store_id = uuid.uid4().hex
+    store_id = uuid.uuid4().hex
     new_store = {**store_data, "id": store_id}
     stores[store_id] = new_store
     return new_store, 201
