@@ -61,7 +61,7 @@ class ItemList(MethodView):
     # @blp.arguments(ItemSchema) validates the JOSN data from client
     # and it calls this post method
     # and passes the validated data through item_data parameter
-    @jwt_required()
+    @jwt_required(fresh=True)
     @blp.arguments(ItemSchema)
     @blp.response(201, ItemSchema)
     def post(self, item_data):
